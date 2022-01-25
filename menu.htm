@@ -1,0 +1,146 @@
+<html>
+
+<script>
+
+
+  function botao1() {
+
+  document.getElementById('botao1').className = 'botaomenu botaomenu3';
+  document.getElementById('botao2').className = 'botaomenu botaomenu2';
+  document.getElementById('botao3').className = 'botaomenu botaomenu2';
+  document.getElementById('botao4').className = 'botaomenu botaomenu2';
+  }
+
+  function botao2() {
+  document.getElementById('botao1').className = 'botaomenu botaomenu2';
+  document.getElementById('botao2').className = 'botaomenu botaomenu3';
+  document.getElementById('botao3').className = 'botaomenu botaomenu2';
+  document.getElementById('botao4').className = 'botaomenu botaomenu2';
+  }  
+  
+
+  function botao3() {
+  document.getElementById('botao1').className = 'botaomenu botaomenu2';
+  document.getElementById('botao2').className = 'botaomenu botaomenu2';
+  document.getElementById('botao3').className = 'botaomenu botaomenu3';
+  document.getElementById('botao4').className = 'botaomenu botaomenu2';
+  }  
+
+  function botao4() {
+  document.getElementById('botao1').className = 'botaomenu botaomenu2';
+  document.getElementById('botao2').className = 'botaomenu botaomenu2';
+  document.getElementById('botao3').className = 'botaomenu botaomenu2';
+  document.getElementById('botao4').className = 'botaomenu botaomenu3';
+  }  
+
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 17;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #040004;
+        line-height: 0.4; // ESPAÇO ENTRE LINHAS.
+       }
+
+    .content {
+        background-color: #FFF;
+        width: 720px;
+        padding: 10px;
+        margin: 20px auto 0 auto;
+        box-shadow: 0px 4px 10px;
+        border-radius: 5px;
+    }
+
+   body {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+    
+.botaomenu{
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0px 10px; // Espacamento
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 10px;
+   -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 200px;
+    height: 50px;
+}
+
+.botaomenu2{
+    background-color: F0F0FF; 
+    color: black; 
+    border: 3px solid #008CBA;
+}
+
+.botaomenu2:hover {
+    background-color: #D2D2FF;
+    color: black;
+}
+
+.botaomenu3 {
+    background-color: #008CBA;
+    color: white;
+    border: 3px solid #000066;
+}
+
+
+</style>
+
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova pagina 2</title>
+<base target="principal">
+</head>
+
+<!-- <body onload="botao11()"> -->
+<body>
+
+<div class="content" style="width: 80%; height: 65%">
+        
+
+
+<p align="center">
+
+<!-- <a button target="principal" href="principal.htm" class="botaomenu botaomenu2">Principal</button></a> -->
+
+
+
+
+<a target="principal" href="principal.htm">
+<!-- <button id="botao1" onclick="botao1()" onfocus="focusbotao1()" class="botaomenu botaomenu3">Principal</button> -->
+<button name="botao1" id="botao1"  onclick="botao1()" class="botaomenu botaomenu3">
+Principal</button></a>
+
+<a target="principal" href="portifolio.htm">
+<button id="botao2" onclick="botao2()" class="botaomenu botaomenu2">Portifólio</button></a>
+
+<a target="principal" href="video.htm">
+<button id="botao3" onclick="botao3()" class="botaomenu botaomenu2">Vídeo</button></a>
+
+<a target="principal" href="formulario.htm">
+<button id="botao4" onclick="botao4()" class="botaomenu botaomenu2">Formulário</button></a>
+
+
+
+
+</p>
+     
+</div>
+   
+</body>
+
+</html>
