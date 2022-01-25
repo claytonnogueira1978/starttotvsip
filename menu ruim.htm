@@ -1,0 +1,124 @@
+<html>
+
+<script>
+
+function setFocus() {
+  document.getElementById("botaofocu").focus(); 
+}
+
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 100%;
+        color: #040004;
+        line-height: 0.4; // ESPAÇO ENTRE LINHAS.
+       }
+
+    .content {
+        background-color: #FFF;
+        width: 720px;
+        padding: 10px;
+        margin: 20px auto 0 auto;
+        box-shadow: 0px 4px 10px;
+        border-radius: 5px;
+    }
+
+   body {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+    
+.botaomenu{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    width: 150px;
+
+}
+.botaomenu a{
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 12px;
+    padding: 20px 10px; // Espacamento
+
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; // Tira linha do link
+    color: white;
+
+    margin: 2px 10px;
+   -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+}
+
+.botaomenu2{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.botaomenu a:hover {
+    background-color: #DDDDFF;
+    color: black;
+}
+
+.botaomenu a:focus {
+    background-color: #008CBA;
+    color: white;
+}
+
+.botaomenu a:visited {
+    background-color: #008CBA;
+    color: white;
+}
+
+</style>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova pagina 2</title>
+<base target="principal">
+</head>
+
+<body>
+
+<div id="botaocss" class="content" style="width: 80%; height: 65%">
+        
+<p align="center"> 
+
+<a target="principal" href="principal.htm">
+<button id="botaofocu" name="botaofocu" class="botaomenu">Principal</button>
+</a>
+
+<a target="portifolio" href="portifolio.htm">
+<button class="botaomenu">Portifólio</button>
+</a>
+
+<a target="video" href="video.htm">
+<button class="botaomenu botaomenu2">Vídeo</button>
+</a>
+
+<a target="principal" href="Formulario.htm">
+<button class="botaomenu botaomenu2">Formulário</button>
+</a>
+
+<!-- <button class="botaomenu botaomenu2">Portifólio</button>
+<button class="botaomenu botaomenu2">Vídeo</button> -->
+
+</p>
+     
+</div>
+   
+</body>
+
+</html>

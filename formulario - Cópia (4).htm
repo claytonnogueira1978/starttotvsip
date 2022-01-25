@@ -1,0 +1,383 @@
+<html>
+
+<script>
+
+function removerTR(r) {
+  var x = confirm("Deseja realmente excluir este item?");
+
+  if (x){
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+  contaregistros();
+      }
+  else
+    return false;
+}
+
+function contaregistros() {
+        var totregistros = document.getElementById("tblListaProduto").rows.length-1;
+	    //alert('Your table has ' + totregistros + ' rows.');
+	    //alert(document.getElementById("tblListaProduto").rows[0].innerHTML);
+	    //document.getElementById("textobotaoincluir").innerHTML = "Incluir despesa (" + totregistros +")";
+  	    document.getElementById("totaldespesas").innerHTML = "Despesas: (" + totregistros +")";
+   
+	    }
+	    
+function adicionarTR(){
+        // Quantidade de linha da tabela
+        var qtdRows = document.getElementById("tblListaProduto").rows.length;
+        var table = document.getElementById("tblListaProduto");
+        var newRow = table.insertRow(qtdRows);
+        var chave = "composto_" + qtdRows;
+        var indexteste = qtdRows-1;
+        newRow.id = chave;
+        
+        
+        // add cells to the row
+        var cel0 = newRow.insertCell(0);
+        var cel1 = newRow.insertCell(1);
+        var cel2 = newRow.insertCell(2);
+        var cel3 = newRow.insertCell(3);
+        var cel4 = newRow.insertCell(4);
+        var cel5 = newRow.insertCell(5);
+
+        // add values to the cells
+        
+//<img src='delete.png' alt='"+i+"' class='btnExcluir'/>
+
+        cel0.innerHTML = "<tr><td><img src='edit.png' onclick='autsomalinha5(this)'/><img src='delete.png' value='Delete' onclick='removerTR(this)'></td>";
+       //  cel0.innerHTML = "<input type='button' value='Delete' onclick='removerTR(this)'>";
+        cel1.innerHTML = "<td><select name='select' style='background-color: #FFFFFF'> <option value='Alimentacao' selected>Alimentação</option> <option value='Hospedagem'>Hospedagem</option><option value='Pedágio'>Pedagio</option><option value='Combustivel'>Combustível</option><option value='Outras'>Outras</option></select></td>";
+
+       // cel1.innerHTML = "<input type='text' value='" + chave + "'>";
+        cel2.innerHTML = "<td><input type='text' onclick='useAdress()' value='" + chave + "'></td>";
+        cel3.innerHTML = "<td><input name='valor_unitario[]' class='valor_unitario' onchange='alterouvalores()' type='text' value='" + qtdRows + "'></td>";
+        cel4.innerHTML = "<td><input name='qnt[]' class='qnt' type='text' value='" + "2" + "'></td>";
+
+	    //cel5.innerHTML = "<td><input name='total' class='total' readonly='readonly' onclick='calc(0, this)' type='text'></td></tr>";
+   	    cel5.innerHTML = "<td><input name='total' class='total' onclick='calc("+ indexteste +" , this)' type='text'></td></tr>";
+        // cel5.innerHTML = "<td><input id='test2' type='text' value='" + "0" + "'></td><tr>";
+        
+        var alter = 0;
+ 
+contaregistros();
+
+}
+
+
+function autsomalinha(){
+         //     var vlrunitlinha = document.getElementById(idcat+" + qtdRows+ ").value;
+        //    var qtdlinha = document.getElementById("coordenacao12").value;
+         //   var totlinha = parseFloat(vlrunitlinha ) * parseFloat(qtdlinha );
+         //alert("Despesas: (" + cel3.innerHTML +")");
+         //var i = r.parentNode.parentNode.rowIndex;
+       //  var i = 100;
+        // cel5.innerHTML = "90">";
+      
+         // alert('Your table has ' + i + ' rows.');
+         // alert(document.getElementById("myTable").rows[i].innerHTML);
+        // var last = cells[3].innerHTML;
+        // alert('Your table has ');
+         //document.querySelectorAll("table td:nth-child(6)")[2].innerHTML = "huuhhu"
+         //  document.getElementById("totaldespesas").innerHTML = "Despesas: (" + chave +")";
+         // alert('Your table has ' + chave + ' rows.');
+         
+       // var val = document.getElementById("qtdsomar").rows[2].innerHTML;
+
+//cel5.innerHTML = "22";
+         //document.getElementById("qtdsomar").innerHTML = "22";
+       
+//document.getElementById("totaldespesas").innerHTML = "Despesas: (" + val +")";
+
+
+	var cont = document.getElementById("tblListaProduto").rows.length;
+        for (var row = 1; row < cont; row++) 
+	{
+	
+
+//   $("#tblListaProduto").children().children()[row].children[NumeroDaColunaASerValidada].innerHTML = $("#idDaMinhaTabela").children().children()[row].children[NumeroDaColunaComNovasInformacoes].innerHTML;
+//   $("#tblListaProduto").children().children()[row].children[6].innerHTML = 10;
+   //document.getElementById("tblListaProduto").children().children()[row].children[4].innerHTML = "22";	  
+   alert('Your table has ' + row + ' rows.');	  
+             };
+}
+
+
+function autsomalinha2(){
+
+//  var i = r.parentNode.parentNode.rowIndex;
+//  document.getElementById("myTable").deleteRow(i);
+  
+//document.getElementById("test").innerHTML = "test";
+document.getElementById("test2").value = 10;
+//document.querySelectorAll("table td:nth-child(6)")[2].value = "10";
+//alert('AA ' + val + ' AA');
+   
+}
+
+  function autsomalinha3(element){
+    alert("row" + element.parentNode.parentNode.rowIndex + " - column" + element.parentNode.cellIndex);
+}
+
+
+function autsomalinha4(){
+var ato = $("#test2").val();
+   alert('Your table has ' + ato + ' rows.');
+//alert("conteudo da coluna"+2+" ->"+colunas[2].firstChild.nodeValue);
+//var to = document.querySelectorAll("table td:nth-child(4)")[1].innerHTML;
+//document.querySelectorAll("table td:nth-child(6)")[1].innerText = to;
+   
+}
+
+function autsomalinha5(){
+   // alert("row" + element.parentNode.parentNode.rowIndex);
+var tabe = document.body.querySelectorAll("table th:nth-child(2), table td:nth-child(2)");
+//var i = r.parentNode.parentNode.rowIndex;
+alert('VALOR VAR TO-'+tabe);
+  
+  }
+
+
+function looptb(){
+
+	var cont = document.getElementById("tblListaProduto").rows.length;
+    
+    for (var row = 0; row < cont; row++) {
+    var to = document.querySelectorAll("table td:nth-child(6)")[row].innerHTML;
+  //var qtdv = document.querySelectorAll("table td:nth-child(6)")[row].innerHTML;
+   alert("row" + to + " - column");
+//   alert('Your table has ' + row + ' rows.'+ qtdv +';	  
+   };
+
+}
+
+function alterouvalores(){
+var alter = 1;
+alert("ALTEROU VALOR UNITARIO "+alter);
+  }
+
+
+if (alter  = 0) {
+let preco = []
+let qtd = []
+let total = []
+}
+
+
+function calc(indice, self){
+
+if (alter  = 1) {
+let preco = []
+let qtd = []
+let total = []
+var alter = 0
+}
+
+
+alert('ALTEROU VALOR UNITARIO '+alter);
+
+  let valorUnitario = document.getElementsByClassName('valor_unitario')[indice]
+  let quantidade = document.getElementsByClassName('qnt')[indice]
+  let tt = document.getElementsByClassName('total')[indice]
+  
+  preco.push(valorUnitario.value)
+  qtd.push(quantidade.value)
+  
+ 
+// alert('VALOR QTD - ' +  qtd[indice])
+ 
+alert('Quantidade- ' + qtd[indice] + ' Valor-'+ preco[indice])	 	
+ 
+  let total_simple = preco[indice] * qtd[indice]
+   
+  tt.value = total_simple
+}
+
+function useAdress() { 
+var id = $("#choose-address-table").find(".nr:first").text();
+alert (id);
+//$("#resultas").append(id); // Testing: append the contents of the td to a div
+};
+
+</script>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 100%;
+        color: #040004;
+        line-height: 0.4; // ESPAÇO ENTRE LINHAS.
+       }
+
+    .content {
+        background-color: #FFF;
+        width: 720px;
+        padding: 20px;
+        margin: 20px auto 0 auto;
+        box-shadow: 0px 4px 10px;
+        border-radius: 5px;
+    }
+
+    .row {
+        padding: 5px;
+    }
+    
+    fieldset {
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 10px;
+        border-color: #c2cbce;
+        box-shadow: 2px 2px 2px #c2cbce;
+    }
+
+
+    legend {
+        font-size: 16px; 
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+   body {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+    
+.botaoincluir{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 190px;
+    
+}
+
+.botaoincluir2{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.botaoincluir2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+    
+  
+
+</style>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova pagina 2</title>
+<base target="principal">
+</head>
+
+<body>
+
+        <div class="content" style="width: 1024px; height: 445px">
+        
+      <!--  <p align="center"><b><font size="5">Formulário de solicitação de Reembolso</font></b></p> -->>
+     
+  <fieldset>
+                <legend> Solicitante: </legend>
+           
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="off" required>
+                    <label for="sobrenome">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Digite sua empresa" autocomplete="off" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="off" required>
+                    <label for="area">Área:</label>
+                    <input type="text" id="area" name="area" placeholder="Digite sua Área" autocomplete="off" required>
+</fieldset>
+
+
+<p align="right"> 
+<button id='textobotaoincluir' onclick="adicionarTR();" class="botaoincluir botaoincluir2">Incluir despesa</button>
+</p>  
+
+<fieldset>
+               
+<legend id="totaldespesas"> Despesas: </legend>
+
+<table cellspacing="10" id="myTable" class="table table-bordered">
+
+<!-- <button onclick="contaregistros();">conta registrossss</button> -->
+
+<thead>
+
+<script>
+
+   var qtdRows = document.getElementById("tblListaProduto").rows.length;
+
+if (qtdRows  > 0)
+{
+  alert('maior que 0 ' + qtdRows  + ' rows.');
+   x++;
+} else {
+  alert('MENOR que 0 ' + qtdRows  + ' rows.');
+}
+
+</script>  
+
+        <tr  class="active">
+            <th></th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+   
+
+</thead>
+<tbody id="tblListaProduto">
+<tr>
+</tr>
+
+</tbody>
+
+
+<tfoot>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Total</th>
+</tfoot>
+
+
+</table>
+
+
+<p align="center"> 
+<button id='textobotaoincluir' onclick="looptb();" class="botaoincluir botaoincluir2">Loop TB</button>
+<button id='textobotaoincluir' onclick="autsomalinha5();" class="botaoincluir botaoincluir2">Altera vlr tot</button>
+<button id='textobotaoincluir' onclick="zeravalores();" class="botaoincluir botaoincluir2">Zera valores</button>
+</p>  
+
+
+</fieldset>
+
+        
+         </div>
+   
+</body>
+
+</html>

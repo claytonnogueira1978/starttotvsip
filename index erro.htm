@@ -1,0 +1,39 @@
+<html>
+
+<script>
+
+var atu = 0;
+
+function inde() {
+
+      alert('Your table has ' + atu + ' rows.');
+      document.location.reload(true);
+//window.frames['principal'].location.reload();
+//frameset.contentDocument.location.href = "principal.htm"
+//document.getElementById("principal1").src = sessionStorage.getItem("principal.htm")
+
+
+}
+
+</script>
+
+<head>
+<title>Start TOTVS</title>
+</head>,
+
+
+<frameset border="0" rows="112,*">
+
+<frame name="cabeçalho" scrolling="no" resize target="principal" src="menu.htm">
+<frame id="principal" name="principal" target="principal" src="principal.htm">
+	<noframes">
+
+
+	<body>
+
+	</body>
+
+	</noframes>
+</frameset>
+
+</html>

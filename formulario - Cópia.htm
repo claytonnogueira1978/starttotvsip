@@ -1,0 +1,294 @@
+<html>
+
+<script>
+
+function removerTR(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+  contaregistros();
+}
+
+function contaregistros() {
+        var totregistros = document.getElementById("tblListaProduto").rows.length-1;
+	    //alert('Your table has ' + totregistros + ' rows.');
+	    //alert(document.getElementById("tblListaProduto").rows[0].innerHTML);
+	    //document.getElementById("textobotaoincluir").innerHTML = "Incluir despesa (" + totregistros +")";
+  	    document.getElementById("totaldespesas").innerHTML = "Despesas: (" + totregistros +")";
+   
+	    }
+	    
+function adicionarTR(){
+        // Quantidade de linha da tabela
+        var qtdRows = document.getElementById("tblListaProduto").rows.length;
+
+        var table = document.getElementById("tblListaProduto");
+        var newRow = table.insertRow(qtdRows);
+        var chave = "composto_" + qtdRows
+        newRow.id = chave;
+        
+           
+  
+        // add cells to the row
+        var cel0 = newRow.insertCell(0);
+        var cel1 = newRow.insertCell(1);
+        var cel2 = newRow.insertCell(2);
+        var cel3 = newRow.insertCell(3);
+        var cel4 = newRow.insertCell(4);
+        var cel5 = newRow.insertCell(5);
+
+        // add values to the cells
+        
+        
+               
+//<img src='delete.png' alt='"+i+"' class='btnExcluir'/>
+
+        cel0.innerHTML = "<img src='edit.png' onclick='autsomalinha2()'/><img src='delete.png' value='Delete' onclick='removerTR(this)'>";
+
+       //  cel0.innerHTML = "<input type='button' value='Delete' onclick='removerTR(this)'>";
+        cel1.innerHTML = "<input type='text' value='" + chave + "'>";
+        cel2.innerHTML = "<input type='text' value='" + "Descrição" + "'>";
+        cel3.innerHTML = "<tr><input type='text' value='" + qtdRows + "'></tr>";
+        cel4.innerHTML = "<input type='text' value='" + "1" + "'>";
+        cel5.innerHTML = "<td><input id='test2' type='text' value='" + "0" + "'></td>";
+
+ 
+contaregistros();
+
+}
+
+function ConfirmDelete()
+{
+  var x = confirm("Deseja realmente excluir este item?");
+  if (x)
+      removerTR(r);
+  else
+    return false;
+}
+
+
+function autsomalinha(){
+         //     var vlrunitlinha = document.getElementById(idcat+" + qtdRows+ ").value;
+        //    var qtdlinha = document.getElementById("coordenacao12").value;
+         //   var totlinha = parseFloat(vlrunitlinha ) * parseFloat(qtdlinha );
+         //alert("Despesas: (" + cel3.innerHTML +")");
+         //var i = r.parentNode.parentNode.rowIndex;
+       //  var i = 100;
+        // cel5.innerHTML = "90">";
+      
+         // alert('Your table has ' + i + ' rows.');
+         // alert(document.getElementById("myTable").rows[i].innerHTML);
+        // var last = cells[3].innerHTML;
+        // alert('Your table has ');
+         //document.querySelectorAll("table td:nth-child(6)")[2].innerHTML = "huuhhu"
+         //  document.getElementById("totaldespesas").innerHTML = "Despesas: (" + chave +")";
+         // alert('Your table has ' + chave + ' rows.');
+         
+       // var val = document.getElementById("qtdsomar").rows[2].innerHTML;
+
+//cel5.innerHTML = "22";
+         //document.getElementById("qtdsomar").innerHTML = "22";
+       
+//document.getElementById("totaldespesas").innerHTML = "Despesas: (" + val +")";
+
+
+	var cont = document.getElementById("tblListaProduto").rows.length;
+        for (var row = 1; row < cont; row++) 
+	{
+	
+
+
+   document.getElementById("tblListaProduto").children().children()[row].children[4].innerHTML = "22";	  
+   alert('Your table has ' + row + ' rows.');	  
+             };
+}
+
+
+function autsomalinha2(){
+
+//  var i = r.parentNode.parentNode.rowIndex;
+//  document.getElementById("myTable").deleteRow(i);
+  
+//document.getElementById("test").innerHTML = "test";
+document.getElementById("test2").value = 10;
+//document.querySelectorAll("table td:nth-child(6)")[2].value = "10";
+//alert('AA ' + val + ' AA');
+   
+}
+
+  function autsomalinha3(element){
+    alert("row" + element.parentNode.parentNode.rowIndex + " - column" + element.parentNode.cellIndex);
+}
+
+
+function autsomalinha4(){
+var ato = $("#test2").val();
+   alert('Your table has ' + ato + ' rows.');
+//alert("conteudo da coluna"+2+" ->"+colunas[2].firstChild.nodeValue);
+//var to = document.querySelectorAll("table td:nth-child(4)")[1].innerHTML;
+//document.querySelectorAll("table td:nth-child(6)")[1].innerText = to;
+   
+}
+
+
+
+</script>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 100%;
+        color: #040004;
+        line-height: 0.4; // ESPAÇO ENTRE LINHAS.
+       }
+
+    .content {
+        background-color: #FFF;
+        width: 720px;
+        padding: 20px;
+        margin: 20px auto 0 auto;
+        box-shadow: 0px 4px 10px;
+        border-radius: 5px;
+    }
+
+    .row {
+        padding: 5px;
+    }
+    
+    fieldset {
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 10px;
+        border-color: #c2cbce;
+        box-shadow: 2px 2px 2px #c2cbce;
+    }
+
+
+    legend {
+        font-size: 16px; 
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+   body {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+    
+.botaoincluir{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 190px;
+    
+}
+
+.botaoincluir2{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.botaoincluir2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+    
+  
+
+</style>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova pagina 2</title>
+<base target="principal">
+</head>
+
+<body>
+
+        <div class="content" style="width: 1024px; height: 445px">
+        
+      <!--  <p align="center"><b><font size="5">Formulário de solicitação de Reembolso</font></b></p> -->>
+     
+  <fieldset>
+                <legend> Solicitante: </legend>
+           
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="off" required>
+                    <label for="sobrenome">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Digite sua empresa" autocomplete="off" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="off" required>
+                    <label for="area">Área:</label>
+                    <input type="text" id="area" name="area" placeholder="Digite sua Área" autocomplete="off" required>
+</fieldset>
+
+
+<p align="right"> 
+<button id='textobotaoincluir' onclick="adicionarTR();" class="botaoincluir botaoincluir2">Incluir despesa</button>
+</p>  
+
+<fieldset>
+               
+<legend id="totaldespesas"> Despesas: </legend>
+
+<table id="myTable" class="table table-bordered">
+
+<!-- <button onclick="contaregistros();">conta registrossss</button> -->
+
+<thead>
+  
+        <tr  class="active">
+            <th></th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Vlr. unitário</th>
+            <th>Quantidade</th>
+            <th>Vlr. Total</th>
+        </tr>
+   
+
+</thead>
+<tbody id="tblListaProduto">
+<tr>
+</tr>
+
+</tbody>
+
+
+<tfoot>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Total</th>
+</tfoot>
+
+</table>
+
+
+</fieldset>
+
+
+        
+         </div>
+   
+</body>
+
+</html>
